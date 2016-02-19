@@ -1,0 +1,50 @@
+{
+  "name": "log4js-memory-appender",
+  "version": "0.1.0",
+  "description": "log4js memory appender",
+  "main": "log4js-memory-appender.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alekzonder/log4js-json.git"
+  },
+  "keywords": [
+    "log4js",
+    "json"
+  ],
+  "author": {
+    "name": "A.Dowding (retroburst)",
+    "email": "retroburst@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alekzonder/log4js-json/issues"
+  },
+  "homepage": "https://github.com/alekzonder/log4js-json#readme",
+  "devDependencies": {
+    "log4js": "^0.6.31"
+  },
+  "gitHead": "5f4462f49b54926f79fe9bd49adbbc7eddab63db",
+  "_id": "log4js-json@0.2.0",
+  "scripts": {},
+  "_shasum": "2a0b0a5889fa22ac75879a61f2a8658ec672f35c",
+  "_from": "log4js-json@latest",
+  "_npmVersion": "2.14.7",
+  "_nodeVersion": "4.2.2",
+  "_npmUser": {
+    "name": "alekzonder",
+    "email": "alekzonder+npm@gmail.com"
+  },
+  "dist": {
+    "shasum": "2a0b0a5889fa22ac75879a61f2a8658ec672f35c",
+    "tarball": "http://registry.npmjs.org/log4js-json/-/log4js-json-0.2.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "alekzonder",
+      "email": "alekzonder+npm@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/log4js-json/-/log4js-json-0.2.0.tgz",
+  "readme": "ERROR: No README data found!"
+}
