@@ -2,13 +2,12 @@
 
 module.exports = function(options){
     var layouts = require('log4js').layouts;
-    var defaultOptions = { buffer : [], maxBufferSize : 100 };
     var buffer = null;
     var maxBufferSize = null;
     
-    options = options || defaultOptions;
-    buffer = options.buffer || defaultOptions.buffer;
-    maxBufferSize = options.maxBufferSize || defaultOptions.maxBufferSize;
+    options = options || {};
+    buffer = options.buffer || [];
+    maxBufferSize = options.maxBufferSize || 100;
     
     var memoryAppender = function(layout, timezoneOffset) {
         layout = layout || layouts.basicLayout;

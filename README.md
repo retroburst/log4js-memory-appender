@@ -1,6 +1,6 @@
 # log4js-memory-appender
 
-log4js memory appender - stores log events in an array. Good for storing a buffer of tail log events to output on a diagnostics page.
+A simple memory appender for log4js. It stores log events in an array - good for keeping a buffer of tail logs to output on a diagnostics page.
 
 ## install
 
