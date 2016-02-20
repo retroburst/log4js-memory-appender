@@ -1,6 +1,6 @@
 {
   "name": "log4js-memory-appender",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "log4js memory appender - stores log events in an array. Good for storing a buffer of tail log events to output on a diagnostics page.",
   "main": "log4js-memory-appender.js",
   "scripts": {
