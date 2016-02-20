@@ -5,7 +5,7 @@ A simple memory appender for log4js. It stores log events in an array - good for
 ## install
 
 ```
-npm i log4js-memory-appender
+npm install log4js-memory-appender
 ```
 
 
