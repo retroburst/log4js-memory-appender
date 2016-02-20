@@ -1,0 +1,25 @@
+{
+  "name": "log4js-memory-appender",
+  "version": "1.0.0",
+  "description": "log4js memory appender - stores log events in an array. Good for storing a buffer of tail log events to output on a diagnostics page.",
+  "main": "log4js-memory-appender.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/retroburst/log4js-memory-appender.git"
+  },
+  "keywords": [
+    "log4js",
+    "memory",
+    "array",
+    "appender"
+  ],
+  "author": "Andrew D <retroburst@gmail.com> (retroburst)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/retroburst/log4js-memory-appender/issues"
+  },
+  "homepage": "https://github.com/retroburst/log4js-memory-appender#readme"
+}
