@@ -36,9 +36,14 @@ module.exports = function(options){
         return(buffer.slice());
     };
     
+    var flushBuffer = function(){
+        buffer = [];
+    };
+    
     return({
             appender: memoryAppender,
             configure: configure,
-            getBuffer: getBuffer
+            getBuffer: getBuffer,
+            flushBuffer: flushBuffer
         });
 };
