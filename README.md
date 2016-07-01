@@ -59,9 +59,14 @@ logger.mark('mark');
 
 console.log(memAppender.getBuffer());
 
+console.log("Flushing the buffer.");
+memAppender.flushBuffer();
+console.log(memAppender.getBuffer());
+
+
 ```
 
-## output
+## Example Output
 
 ```
 

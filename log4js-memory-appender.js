@@ -1,5 +1,8 @@
 "use strict";
 
+/********************************************************
+ * Memory appender module for log4js.
+ ********************************************************/
 module.exports = function(options){
     var layouts = require('log4js').layouts;
     var buffer = null;
@@ -9,7 +12,10 @@ module.exports = function(options){
     buffer = options.buffer || [];
     maxBufferSize = options.maxBufferSize || 100;
     
-    var memoryAppender = function(layout, timezoneOffset) {
+    /********************************************************
+     * Constructs a new memory appender.
+     ********************************************************/
+    var memoryAppender = function memoryAppender(layout, timezoneOffset) {
         layout = layout || layouts.basicLayout;
         return function(loggingEvent) {
             if((buffer.length + 1) > maxBufferSize)
@@ -21,7 +27,10 @@ module.exports = function(options){
         };
     };
     
-    var configure = function(config) {
+    /********************************************************
+     * Configures and returns a new memory appender.
+     ********************************************************/
+    var configure = function configure(config) {
         var layout = null;
         if (config.layout) {
             layout = layouts.layout(config.layout.type, config.layout);
@@ -32,11 +41,17 @@ module.exports = function(options){
         return memoryAppender(layout, config.timezoneOffset);
     };
     
-    var getBuffer = function(){
+    /********************************************************
+     * Returns a copy of the log buffer.
+     ********************************************************/
+    var getBuffer = function getBuffer(){
         return(buffer.slice());
     };
     
-    var flushBuffer = function(){
+    /********************************************************
+     * Flushes (empties the log buffer).
+     ********************************************************/
+    var flushBuffer = function flushBuffer(){
         buffer = [];
     };
     
