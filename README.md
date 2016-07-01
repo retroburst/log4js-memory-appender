@@ -2,7 +2,7 @@
 
 A simple memory appender for log4js. It stores log events in an array - good for keeping a buffer of tail logs to output on a diagnostics page.
 
-## install
+## Install
 
 ```
 npm install log4js-memory-appender
