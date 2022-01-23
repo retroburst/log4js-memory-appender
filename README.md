@@ -1,6 +1,13 @@
 # log4js-memory-appender
 
 A simple memory appender for log4js. It stores log events in an array - good for keeping a buffer of tail logs to output on a diagnostics page.
+The latest version has been modified to support Log4js version 6 and above. Please note, from version 6 all appenders need to be defined in
+config and cannot be progammatically instantiated and configured. Because of this, log4js-memory-appender can no longer be passed a buffer to
+use and can only use its own internal array as a buffer.
+
+* log4js-memory-appender v1.0.5 - works with Log4js versions below v2.0.0
+* log4js-memory-appender v6.0.0 and above - designed to work with Log4js v6.4.0 and above
+* see [log4js-in-memory-appender](https://www.npmjs.com/package/log4js-in-memory-appender) by [@nivek](https://www.npmjs.com/~nivek) for a version that works with Log4js v2.0.0
 
 ## Install
 
@@ -10,6 +17,59 @@ npm install log4js-memory-appender
 
 
 ## Usage
+
+### Version 6.0.0 and above
+#### Config
+```json
+
+"log4js" : {
+    "level": "ALL",
+    "appenders" : {
+        "console" : { "type": "console", "timezoneOffset": 0 },
+        "file" : { "type": "file", "filename": "logs/gallop.log", "maxLogSize": 1024000, "timezoneOffset": 0, "backups": 50 },
+        "memory" : { "type": "log4js-memory-appender", "maxBufferSize": 100, "timezoneOffset": 0 }
+    },
+    "categories" :  {
+        "default": { "appenders": ["console", "file", "memory"], "level": "ALL" }
+    }
+}
+```
+
+#### Initialisation and Usage
+
+```js
+
+var log4js = require('log4js');
+var memAppender = require('log4js-memory-appender');
+
+var log4jsLogger = null;    
+log4js.configure(config.log4js);
+logger = log4js.getLogger("App Name");
+// set the initial level, as newer versions of log4js are set to OFF by default
+log4jsLogger.level = gallopConfig.log4js.level;
+logger.trace('trace');
+logger.debug('debug');
+logger.info('info');
+logger.warn('warn');
+var error = new Error('test');
+error.code = 'fatal';
+logger.error(error);
+logger.fatal('fatal');
+logger.mark('mark');
+
+// set the buffer size later instead of configuration via an exported function on the appender definition
+memAppender.setMaxBufferSize(1000);
+
+// access the buffer by a function exported on the appender definition
+console.log(memAppender.getBuffer());
+
+// flush the buffer using a function exported on the appender definition
+console.log(memAppender.flushBuffer());
+```
+
+### Version 1.0.5 and below
+
+#### Initialisation and Usage
 
 ```js
 
@@ -65,6 +125,8 @@ console.log(memAppender.getBuffer());
 
 
 ```
+
+
 
 ## Example Output
 
