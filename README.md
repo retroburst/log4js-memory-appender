@@ -26,7 +26,7 @@ npm install log4js-memory-appender
     "level": "ALL",
     "appenders" : {
         "console" : { "type": "console", "timezoneOffset": 0 },
-        "file" : { "type": "file", "filename": "logs/gallop.log", "maxLogSize": 1024000, "timezoneOffset": 0, "backups": 50 },
+        "file" : { "type": "file", "filename": "logs/something.log", "maxLogSize": 1024000, "timezoneOffset": 0, "backups": 50 },
         "memory" : { "type": "log4js-memory-appender", "maxBufferSize": 100, "timezoneOffset": 0 }
     },
     "categories" :  {
@@ -46,7 +46,7 @@ var log4jsLogger = null;
 log4js.configure(config.log4js);
 logger = log4js.getLogger("App Name");
 // set the initial level, as newer versions of log4js are set to OFF by default
-log4jsLogger.level = gallopConfig.log4js.level;
+log4jsLogger.level = someConfig.log4js.level;
 logger.trace('trace');
 logger.debug('debug');
 logger.info('info');
